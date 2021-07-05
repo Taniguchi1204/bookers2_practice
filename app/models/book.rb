@@ -10,4 +10,16 @@ class Book < ApplicationRecord
 	def favorite_include?(user)
 		favorites.where(user_id: user.id).exists?
 	end
+
+	def self.search_for(content, method)
+		if method == "perfect"
+			User.where(name: content)
+		elsif method == "forward"
+			User.where("name like ?", "#{content}%")
+		elsif method == "backward"
+			User.where("name like ?", "%#{content}")
+		else
+			User.where("name like ?", "%#{content}%")
+		end
+	end
 end
