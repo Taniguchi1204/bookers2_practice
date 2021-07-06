@@ -1,3 +1,4 @@
+
 <% if book.favorite_include?(current_user) %>
       <%= link_to book_favorites_path(book), method: :delete, remote: true do %>
         <i class="far fa-heart"></i><%= book.favorites.count %>
