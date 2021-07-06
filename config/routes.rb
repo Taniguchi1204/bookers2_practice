@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about'
   get "search" => "search#search"
 
-  resources :groups, only:[:show,:index,:new,:create,:edit,:update]
+  resources :groups do
+    get "join" => "groups#join"
+  end
   resources :chats, only:[:show,:create]
 end
