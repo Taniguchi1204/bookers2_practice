@@ -18,6 +18,7 @@
         <td><%= book.body %></td>
         <td id="book_<%= book.id %>"><%= render "books/favorites", book: book %></td>
         <td>コメント数：<%= book.book_comments.count %></td>
+        <td>閲覧数：<%= book.view_counts.count %></td>
         <td>
           <div id="rate_<%= book.id %>"></div>
           <script>

@@ -19,8 +19,11 @@ class User < ApplicationRecord
 
   has_many :user_rooms, dependent: :destroy
   has_many :chats, dependent: :destroy
-  
+
   has_many :group_users, dependent: :destroy
+
+  has_many :view_counts, dependent: :destroy
+
 
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
   validates :introduction, length: {maximum: 50}
