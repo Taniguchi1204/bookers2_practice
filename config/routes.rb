@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resource :relationships, only:[:create,:destroy]
     get "following" => "relationships#following"
     get "followed" => "relationships#followed"
-
+    get "search" => "users#search"
   end
   resources :books do
     resource :favorites, only:[:create,:destroy]
